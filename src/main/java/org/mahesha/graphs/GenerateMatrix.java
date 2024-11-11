@@ -6,12 +6,22 @@ public class GenerateMatrix {
 
     public static int[][] generateMatrix(int rows, int column) {
 
+        return getMatrix(rows, column, 0, 2);
+    }
+
+    public static int[][] generateMatrix(int rows, int column, int start, int end) {
+
+        return getMatrix(rows, column, start, end);
+    }
+
+    public static int[][] getMatrix(int rows, int column, int start, int end){
+
         int[][] matrix = new int[rows][column];
 
         for(int i = 0; i < matrix.length; i++){
 
             for(int j = 0; j < matrix[i].length; j++){
-                matrix[i][j] = RandomGenerator.generateNumber(0, 2);
+                matrix[i][j] = RandomGenerator.generateNumber(start, end);
             }
         }
 
@@ -26,7 +36,6 @@ public class GenerateMatrix {
             }
         }
         System.out.println();
-
 
         return matrix;
     }
